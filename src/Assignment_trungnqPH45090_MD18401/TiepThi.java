@@ -3,9 +3,7 @@ package Assignment_trungnqPH45090_MD18401;
 public class TiepThi extends nhanVien{
     protected double doanhSo;
     protected double hoaHong;
-    public TiepThi(){
 
-    }
     public TiepThi(String maNV, String hoTen, double luong, double doanhSo, double hoaHong) {
         super(maNV, hoTen, luong);
         this.doanhSo = doanhSo;
