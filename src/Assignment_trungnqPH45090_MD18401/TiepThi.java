@@ -31,7 +31,6 @@ public class TiepThi extends nhanVien{
         return super.luong + this.doanhSo + this.hoaHong;
     }
     public void inThongTin(){
-        System.out.println("Nhan vien tiep thi.");
         super.inThongTin();
         System.out.println("Doanh so :" + this.doanhSo);
         System.out.println("Luong hoa hong:" + this.hoaHong);

@@ -20,7 +20,7 @@ public class TruongPhong extends nhanVien {
         return super.luong + trachNghiem;
     }
     public void inThongTin(){
-        System.out.println(" Truong Phong.");
+
         super.inThongTin();
         System.out.println("Luong Trach nghiem :" + this.trachNghiem);
     }

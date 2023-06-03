@@ -1,13 +1,11 @@
 package Assignment_trungnqPH45090_MD18401;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class ChucNang {
     public static Scanner input = new Scanner(System.in);
 
     public void NhapDanhSachNV(ArrayList<nhanVien> ListNV) {
-
         int userChoose;
         String MaNV;
         String name;
@@ -232,7 +230,20 @@ public class ChucNang {
     //TODO : Làm xong trước T2/5/6/2023
     public void SapXepNVTheoHoTen(ArrayList<nhanVien> ListNV) {
         System.out.println("7.Sap xep nhan vien theo ho va ten");
+        Comparator<nhanVien> comp = new Comparator<nhanVien>() {
+            @Override
+            public int compare(nhanVien o1, nhanVien o2) {
+                return o1.getHoTen().compareTo(o2.getHoTen());
+            }
+        };
 
+        Collections.sort(ListNV , comp);
+        for (nhanVien nv:
+             ListNV) {
+            System.out.println("+-------------------------------------+");
+            nv.inThongTin();
+            System.out.println("+-------------------------------------+");
+        }
 
         System.out.println("An de tiep tuc !!!!");
         input.nextLine();
@@ -240,7 +251,20 @@ public class ChucNang {
 
     public void SapXepNVTheoLuong(ArrayList<nhanVien> ListNV) {
         System.out.println("8.Sap xep nhan vien theo thu nhap");
+        Comparator<nhanVien> comp = new Comparator<nhanVien>() {
+            @Override
+            public int compare(nhanVien o1, nhanVien o2) {
+                return Double.compare(o1.getLuong() ,o2.getLuong());
+            }
+        };
+        Collections.sort(ListNV,comp);
 
+        for (nhanVien nv:
+                ListNV) {
+            System.out.println("+-------------------------------------+");
+            nv.inThongTin();
+            System.out.println("+-------------------------------------+");
+        }
 
         System.out.println("An de tiep tuc !!!!");
         input.nextLine();
@@ -248,7 +272,29 @@ public class ChucNang {
 
     public void Top5NVThuNhaoCao(ArrayList<nhanVien> ListNV) {
         System.out.println("9.Xuat 5 nhan vien co thu nhap cao nhat");
+        Comparator<nhanVien> comp = new Comparator<nhanVien>() {
+            @Override
+            public int compare(nhanVien o1, nhanVien o2) {
+                return (int) (o1.getThuNhap() - o2.getThuNhap());
+            }
+        };
 
+        Collections.sort(ListNV , comp);
+
+
+            for (int i = 0; i < 5; i++) {
+                try {
+
+                    System.out.println("+-------------------------------------+");
+                    System.out.println("Nhan Vien so : " + i);
+                    ListNV.get(i).inThongTin();
+                    System.out.println("+-------------------------------------+");
+                }catch (Exception e){
+                    System.out.println("het danh sach !!!!");
+                    System.out.println("+-------------------------------------+");
+                    break;
+                }
+            }
 
         System.out.println("An de tiep tuc !!!!");
         input.nextLine();

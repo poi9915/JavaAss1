@@ -50,8 +50,15 @@ public class nhanVien {
             return this.getThuNhap() *0.12;
         }
     }
+
     public void inThongTin(){
-        System.out.println("Nhan vien hanh chinh.");
+        if (this.getClass().getSimpleName().equals("nhanVien")) {
+            System.out.println("NV hanh chinh.");
+        } else if (this.getClass().getSimpleName().equals("TruongPhong")) {
+            System.out.println("Truong Phong.");
+        } else if (this.getClass().getSimpleName().equals("TiepThi")) {
+            System.out.println("NV Tiep Thi.");
+        }
         System.out.println("Ten nhan vien:" + this.HoTen);
         System.out.println("Ma NV:" + this.MaNV);
         System.out.println("Luong hanh chinh:" + this.luong);
